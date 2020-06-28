@@ -80,24 +80,41 @@
 	</div>
 </rolltemplate>
 
-<table width="100%" style="text-align:center">
-<tr style="background-color: #000000; color: #FFFFFF;">
-		<td>
-			<input checked="checked" type="radio" value="" name="attr_roll"/>&nbsp;<span data-i18n="nba-publicRoll">Public roll</span>
-		</td>
-		<td>
-			<input type="radio" value="/w gm" name="attr_roll"/>&nbsp;<span data-i18n="nba-privateRoll">Private roll</span>
-		</td>
-		<td>
-			Skill check : 			<button type="roll" value="@{roll} &{template:standard} {{jet=[[ 1d6 - @{skill_penalty_health} - @{skill_penalty_mental} + ?{@{askModifier} |0} ]]}}"/>
+<div class="sheet-header-grid" >
+	<div class="sheet-header-item">
+			<div class="sheet-header-item1">
+				<input checked="checked" type="radio" value="" name="attr_roll"/>
+			</div>
+			<div class="sheet-header-item2">
+				<span data-i18n="nba-publicRoll">Public roll</span>
+			</div>
+	</div>
+	<div class="sheet-header-item">
+		<div class="sheet-header-item1">
+			<input type="radio" value="/w gm" name="attr_roll"/>
+		</div>
+		<div class="sheet-header-item2">
+			<span data-i18n="nba-privateRoll">Private roll</span>
+		</div>
+	</div>
+	<div class="sheet-header-item">
+		<div class="sheet-header-item3">
+			<span data-i18n="nba-skillCheck">Skill check</span> :
+		</div>	
+		<div class="sheet-header-item4">
+			<button type="roll" value="@{roll} &{template:standard} {{jet=[[ 1d6 - @{skill_penalty_health} - @{skill_penalty_mental} + ?{@{askModifier} |0} ]]}}"/>
+		</div>
 
-		</td>
-		<td>
-			Attack : 			<button type="roll" value="@{roll} &{template:combat} {{jet=[[ 1d6 - @{skill_penalty_health} - @{skill_penalty_mental} + ?{@{askAttackModifier}|0} - @{selected|hit_threshold} ]]}} {{dmg=[[1d6 + ?{@{askDamageModifier}|0}]]}} {{crit=[[2d6]]}}"/>
-		</td>
-	</tr>
-	<tr ><td class="sheet-spacer"/> &nbsp;</tr>
-</table>
+	</div>
+	<div class="sheet-header-item">
+		<div class="sheet-header-item3">
+			<span data-i18n="nba-attackRoll">Attack</span> :
+		</div>
+		<div class="sheet-header-item4">
+			<button type="roll" value="@{roll} &{template:combat} {{jet=[[ 1d6 - @{skill_penalty_health} - @{skill_penalty_mental} + ?{@{askAttackModifier}|0} - @{selected|hit_threshold} ]]}} {{dmg=[[1d6 + ?{@{askDamageModifier}|0}]]}} {{crit=[[2d6]]}}"/>
+		</div>
+	</div>
+	</div>
 
 <table class="sheet-character-table"> 
 <tr><td>
